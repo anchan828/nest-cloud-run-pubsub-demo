@@ -1,0 +1,7 @@
+.data
+compodoc
+coverage
+dist
+docs
+e2e-coverage
+node_modules

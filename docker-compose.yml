@@ -1,0 +1,34 @@
+version: "3.4"
+
+services:
+  gcloud-pubsub-emulator:
+    image: messagebird/gcloud-pubsub-emulator
+    ports:
+      - "8681:8681"
+
+  publisher:
+    build:
+      context: .
+    command: npm run start:publisher
+    environment:
+      PUBSUB_EMULATOR_HOST: gcloud-pubsub-emulator:8681
+      PUSH_ENDPOINT: http://worker:4367
+    depends_on:
+      - gcloud-pubsub-emulator
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./apps/constants.ts:/workspace/apps/constants.ts
+      - ./apps/publisher:/workspace/apps/publisher
+
+  worker:
+    build:
+      context: .
+    command: npm run start:worker
+    depends_on:
+      - gcloud-pubsub-emulator
+    ports:
+      - "4367"
+    volumes:
+      - ./apps/constants.ts:/workspace/apps/constants.ts
+      - ./apps/worker:/workspace/apps/worker
