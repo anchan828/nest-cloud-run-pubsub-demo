@@ -6,9 +6,10 @@ import {
 } from "@anchan828/nest-cloud-run-pubsub-publisher";
 import { PubSub } from "@google-cloud/pubsub";
 import { Inject, Module, OnModuleInit } from "@nestjs/common";
-import { PublishController } from "./publish.controller";
+import { HelloWorldController } from "./controllers/hello-world.controller";
+import { MultipuleCallController } from "./controllers/multiple-call.controller";
 @Module({
-  controllers: [PublishController],
+  controllers: [HelloWorldController, MultipuleCallController],
   imports: [CloudRunPubSubPublisherModule.register({ projectId: "test", topic: "nest-cloud-run-pubsub-demo" })],
 })
 export class PublisherAppModule implements OnModuleInit {
