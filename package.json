@@ -15,7 +15,7 @@
     "@nestjs/common": "6.10.14",
     "@nestjs/core": "6.10.14",
     "@nestjs/platform-express": "6.10.14",
-    "@anchan828/nest-cloud-run-pubsub-publisher": "0.0.2",
+    "@anchan828/nest-cloud-run-pubsub-publisher": "0.0.4",
     "@anchan828/nest-cloud-run-pubsub-worker": "0.0.4",
     "reflect-metadata": "0.1.13"
   },
