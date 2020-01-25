@@ -12,11 +12,10 @@
     "build:worker": "nest build worker"
   },
   "dependencies": {
-    "@nestjs/common": "6.11.1",
-    "@nestjs/core": "6.11.1",
-    "@nestjs/platform-express": "6.11.1",
-    "@anchan828/nest-cloud-run-pubsub-publisher": "0.0.2",
-    "@anchan828/nest-cloud-run-pubsub-worker": "0.0.4",
+    "@nestjs/common": "6.10.14",
+    "@nestjs/core": "6.10.14",
+    "@nestjs/platform-express": "6.10.14",
+    "@anchan828/nest-cloud-run-pubsub-publisher": "0.0.4",
     "reflect-metadata": "0.1.13"
   },
   "devDependencies": {
@@ -32,7 +31,7 @@
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-sort-keys-fix": "1.1.0",
     "husky": "4.2.1",
-    "lint-staged": "9.5.0",
+    "lint-staged": "10.0.2",
     "prettier": "1.19.1",
     "ts-loader": "6.2.1",
     "typescript": "3.7.5"
