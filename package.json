@@ -12,9 +12,9 @@
     "build:worker": "nest build worker"
   },
   "dependencies": {
-    "@nestjs/common": "6.11.1",
-    "@nestjs/core": "6.11.1",
-    "@nestjs/platform-express": "6.11.1",
+    "@nestjs/common": "6.11.4",
+    "@nestjs/core": "6.11.4",
+    "@nestjs/platform-express": "6.11.4",
     "@anchan828/nest-cloud-run-pubsub-publisher": "0.0.5",
     "reflect-metadata": "0.1.13"
   },
