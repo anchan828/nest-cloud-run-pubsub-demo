@@ -10,7 +10,12 @@ import { HelloWorldController } from "./controllers/hello-world.controller";
 import { MultipuleCallController } from "./controllers/multiple-call.controller";
 @Module({
   controllers: [HelloWorldController, MultipuleCallController],
-  imports: [CloudRunPubSubPublisherModule.register({ projectId: "test", topic: "nest-cloud-run-pubsub-demo" })],
+  imports: [
+    CloudRunPubSubPublisherModule.register({
+      clientConfig: { projectId: "test" },
+      topic: "nest-cloud-run-pubsub-demo",
+    }),
+  ],
 })
 export class PublisherAppModule implements OnModuleInit {
   constructor(
