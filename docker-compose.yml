@@ -25,6 +25,8 @@ services:
     build:
       context: .
     command: npm run start:worker
+    environment:
+      PUBSUB_EMULATOR_HOST: gcloud-pubsub-emulator:8681
     depends_on:
       - gcloud-pubsub-emulator
     ports:

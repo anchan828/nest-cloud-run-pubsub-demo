@@ -28,14 +28,21 @@ export class PublisherAppModule implements OnModuleInit {
       return;
     }
     const topic = this.pubsub.topic(this.options.topic);
-    const subscription = topic.subscription("subscription");
 
     if (!(await topic.exists())[0]) {
       await topic.create();
     }
 
-    if (!(await subscription.exists())[0]) {
-      await subscription.create({ pushEndpoint: process.env.PUSH_ENDPOINT });
+    const pushSubscription = topic.subscription("push-subscription");
+
+    if (!(await pushSubscription.exists())[0]) {
+      await pushSubscription.create({ pushEndpoint: process.env.PUSH_ENDPOINT });
+    }
+
+    const pullSubscription = topic.subscription("pull-subscription");
+
+    if (!(await pullSubscription.exists())[0]) {
+      await pullSubscription.create();
     }
   }
 }
